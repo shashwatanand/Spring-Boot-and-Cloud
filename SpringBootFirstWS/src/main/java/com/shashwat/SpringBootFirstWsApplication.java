@@ -5,8 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+
+/*
+ * Use below anotation or use @SpringBootApplication
+ * @Configuration
+ * @EnableAutoConfiguration
+ * @ComponentScan
+*/
 @SpringBootApplication
+@RestController
 public class SpringBootFirstWsApplication {
 
     public static void main(String[] args) {
