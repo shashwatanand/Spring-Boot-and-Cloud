@@ -1,6 +1,7 @@
 package com.shashwat.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -58,18 +59,20 @@ public class MongoDBPersonService implements PersonService {
 
 	@Override
 	public PersonDTO update(PersonDTO personDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		Person person = searchPersonById(personDTO.getId());
+		person.update(personDTO.getFirstName(), personDTO.getLastName());
+		person = this.personRepository.save(person);
+		return convertToDTO(person);
 	}
 
 	@Override
 	public PersonDTO searchById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		Person person = searchPersonById(id);
+        return convertToDTO(person);
 	}
 	
 	public Person searchPersonById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Person> personResult = this.personRepository.findOne(id);
+		return personResult.orElseThrow(() -> new RuntimeException("Person Not Found"));
 	}
 }
