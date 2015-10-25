@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.shashwat.dataaccess.PersonRepository;
 import com.shashwat.model.Person;
@@ -11,6 +12,7 @@ import com.shashwat.model.PersonDTO;
 
 import static java.util.stream.Collectors.toList;
 
+@Service
 public class MongoDBPersonService implements PersonService {
 	private PersonRepository personRepository;
 	
