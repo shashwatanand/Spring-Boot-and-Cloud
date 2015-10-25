@@ -9,7 +9,7 @@ public class PersonDTO {
 	
 	@NotNull
 	@NotEmpty
-	private String fistName;
+	private String firstName;
 	
 	@NotNull
 	@NotEmpty
@@ -25,12 +25,12 @@ public class PersonDTO {
 		this.id = id;
 	}
 
-	public String getFistName() {
-		return fistName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFistName(String fistName) {
-		this.fistName = fistName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
@@ -44,6 +44,6 @@ public class PersonDTO {
 	@Override
 	public String toString() {
 		return String.format("PersonDTO[id=%s, firstName=%s, lastName=%s]",
-				this.id, this.fistName, this.lastName);
+				this.id, this.firstName, this.lastName);
 	}
 }

@@ -15,10 +15,14 @@ final public class Person {
 	
 	public Person() {}
 	
-	private Person(Builder builder) {
-		this.firstName = builder.firstName;
-        this.lastName = builder.lastName;
+	public Person(PersonBuilder builder) {
+		this.firstName = builder.getFirstName();
+        this.lastName = builder.getLastName();
 	}
+	
+	public String getId() {
+        return id;
+    }
 	
 	public String getFirstName() {
 		return firstName;
@@ -28,8 +32,8 @@ final public class Person {
 		return lastName;
 	}
 	
-	static Builder getBuilder() {
-        return new Builder();
+	public static PersonBuilder getBuilder() {
+        return new PersonBuilder();
     }
 	
 	public void update(String firstName, String lastName) {
@@ -37,32 +41,8 @@ final public class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-	
-	static class Builder{
-		private String firstName;
-		
-		private String lastName;
-		
-		private Builder() {}
 
-		Builder updateFirstName(String firstName) {
-			this.firstName = firstName;
-			return this;
-		}
-		
-		Builder updateLastName(String lastName) {
-			this.lastName = lastName;
-			return this;
-		}
-		
-		Person build() {
-			Person person = new Person(this);
-			person.verifyFirstAndLastName(person.getFirstName(), person.getLastName());
-			return person;
-		}
-	}
-
-	private void verifyFirstAndLastName(String firstName, String lastName) {
+	void verifyFirstAndLastName(String firstName, String lastName) {
 		notNull(firstName, "First Name cannot be null");
         notNull(lastName, "Last Name cannot be null");
         
