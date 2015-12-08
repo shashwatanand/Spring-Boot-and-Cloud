@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.0.0.201207050701-M3]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/beans/screens.xml</config>
+		<config>src/beans/employees.xml</config>
+		<config>src/database/hibernate.xml</config>
+	</configs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
